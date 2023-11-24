@@ -87,6 +87,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="calculateButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dfz-D5-V53"/>
+                                    <segue destination="eAO-B6-hM4" kind="presentation" identifier="toSecondVC" modalPresentationStyle="fullScreen" id="rfi-qP-COt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,16 +113,16 @@
             </objects>
             <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="nWk-xi-fZU">
             <objects>
-                <viewController id="eAO-B6-hM4" sceneMemberID="viewController">
+                <viewController id="eAO-B6-hM4" customClass="SecondViewController" customModule="BMI_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9hm-uJ-M5P">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4rV-Ym-5dL">
-                                <rect key="frame" x="96.666666666666686" y="189" width="200" height="128"/>
+                                <rect key="frame" x="96.666666666666686" y="130" width="200" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BMI 결과값" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9T-X3-IzT">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="24"/>
@@ -150,7 +151,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULF-TK-TZm">
-                                <rect key="frame" x="20" y="743" width="353" height="45"/>
+                                <rect key="frame" x="20" y="777" width="353" height="45"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="i9W-Ki-lnT"/>
@@ -159,6 +160,9 @@
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="eAO-B6-hM4" eventType="touchUpInside" id="eSn-5P-6lf"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Etc-D3-ehU"/>
@@ -171,6 +175,11 @@
                             <constraint firstItem="ULF-TK-TZm" firstAttribute="leading" secondItem="Etc-D3-ehU" secondAttribute="leading" constant="20" id="mO2-ux-6eN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceLabel" destination="RGK-Wl-d40" id="42N-tv-FWx"/>
+                        <outlet property="backButton" destination="ULF-TK-TZm" id="tNf-BX-HOn"/>
+                        <outlet property="bmiNumberLabel" destination="Pa3-GY-Gfp" id="YUl-vL-AgR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYl-7W-uTG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
